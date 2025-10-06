@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light dark; }
+html { scroll-behavior: smooth; }
+
+/* Scroll-snap single-page layout */
+body { min-height: 100vh; }
+.main-snap { height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; }
+.snap-section { scroll-snap-align: start; min-height: 100svh; display: grid; place-items: center; padding: 6rem 1rem; }
+
+.container { max-width: 1100px; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+
+/* Subtle gradient background per section */
+.section-surface { @apply rounded-3xl border shadow-sm backdrop-blur bg-white/70 dark:bg-zinc-900/60; }
+
+/* Modern scrollbar (thin + rounded) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.5);
+}
+
+/* Optional: hide scrollbar for a clean snap experience */
+.main-snap {
+  scrollbar-width: none; /* Firefox */
+}
+.main-snap::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* styles/globals.css */
+::-webkit-scrollbar{width:8px} ::-webkit-scrollbar-thumb{background:rgba(100,100,100,.3);border-radius:9999px}
+.main-snap{scrollbar-width:none}
+.main-snap::-webkit-scrollbar{display:none}

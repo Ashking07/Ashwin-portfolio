@@ -1,0 +1,25 @@
+{
+"name": "Ashwin Kapile",
+"title": "Full‑stack Developer (React/Next.js, Node) • AI/NLP",
+"skills": [
+"JavaScript/TypeScript", "React", "Next.js", "Tailwind", "Node.js", "Express", "REST", "JWT",
+"MongoDB", "MySQL", "Docker", "Azure", "GCP", "GitHub", "Postman/Insomnia"
+],
+"experience": [
+{
+"company": "Kasnet Technologies",
+"role": "Cloud Solutions Intern (Azure)",
+"start": "2023",
+"end": "2024",
+"highlights": [
+"Deployed apps via App Services (+30% ops efficiency)",
+"Normalized Azure SQL (+35% query perf)",
+"Cost Mgmt (-20% infra spend)",
+"Azure Monitor (+25% response, +40% engagement)"
+]
+}
+],
+"education": [
+{ "school": "CSU Fullerton", "degree": "MS Computer Science", "start": "2024", "end": "Present" }
+]
+}
