@@ -1,33 +1,33 @@
 [
-  {
-    "slug": "natours",
-    "name": "Natours — Scalable Tour Booking Platform",
-    "summary": "Node/Express, MongoDB, Stripe, JWT/RBAC. Aggregations & indexes to cut API latency ~40%.",
-    "tech": ["Node.js","Express","MongoDB","Stripe","JWT","RBAC"],
-    "metrics": [
-      { "label": "API latency", "value": "-40% via indexes/aggregation" },
-      { "label": "Uptime", "value": "99.9%" },
-      { "label": "Payments", "value": "98% success" }
-    ],
-    "links": { "demo": "", "repo": "" }
-  },
-  {
-    "slug": "shortify",
-    "name": "Shortify — AI URL Shortener",
-    "summary": "10k+/day, Redis cache (-40% redirect latency), categorization via LLM scaffolding.",
-    "tech": ["Next.js","Redis","Vercel","DeepSeek"],
-    "metrics": [
-      { "label": "Traffic", "value": "10k+ requests/day" },
-      { "label": "Latency", "value": "-40% via caching" }
-    ],
-    "links": { "demo": "", "repo": "" }
-  },
-  {
-    "slug": "usepopcorn",
-    "name": "usePopCorn — Movie Ratings App",
-    "summary": "React hooks, local storage persistence, -30% initial load, -20% code duplication via custom hooks.",
-    "tech": ["React","Vite","LocalStorage"],
-    "metrics": [],
-    "links": { "demo": "", "repo": "" }
-  }
+{
+"slug": "natours",
+"name": "Natours — Scalable Tour Booking Platform",
+"summary": "Node/Express, MongoDB, Stripe, JWT/RBAC. Aggregations & indexes to cut API latency ~40%.",
+"tech": ["Node.js","Express","MongoDB","Stripe","JWT","RBAC"],
+"metrics": [
+{ "label": "API latency", "value": "-40% via indexes/aggregation" },
+{ "label": "Uptime", "value": "99.9%" },
+{ "label": "Payments", "value": "98% success" }
+],
+"links": { "demo": "", "repo": "" }
+},
+{
+"slug": "shortify",
+"name": "Shortify — AI URL Shortener",
+"summary": "10k+/day, Redis cache (-40% redirect latency), categorization via LLM scaffolding.",
+"tech": ["Next.js","Redis","Vercel","DeepSeek"],
+"metrics": [
+{ "label": "Traffic", "value": "10k+ requests/day" },
+{ "label": "Latency", "value": "-40% via caching" }
+],
+"links": { "demo": "", "repo": "" }
+},
+{
+"slug": "usepopcorn",
+"name": "usePopCorn — Movie Ratings App",
+"summary": "React hooks, local storage persistence, -30% initial load, -20% code duplication via custom hooks.",
+"tech": ["React","Vite","LocalStorage"],
+"metrics": [],
+"links": { "demo": "", "repo": "" }
+}
 ]
