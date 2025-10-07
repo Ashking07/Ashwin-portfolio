@@ -21,5 +21,37 @@
 ],
 "education": [
 { "school": "CSU Fullerton", "degree": "MS Computer Science", "start": "2024", "end": "Present" }
-]
+],
+ "certifications": [
+    {
+      "title": "Microsoft Certified: Azure AI Fundamentals",
+      "issuer": "Microsoft",
+      "logo": "/logos/microsoft.svg"
+    },
+    {
+      "title": "Microsoft Certified: Azure Fundamentals",
+      "issuer": "Microsoft",
+      "logo": "/logos/microsoft.svg"
+    },
+    {
+      "title": "Cloud Engineering Track & Data Science/ML",
+      "issuer": "Google Cloud",
+      "logo": "/logos/google-cloud.svg"
+    },
+    {
+      "title": "Responsive Web Design (300h)",
+      "issuer": "freeCodeCamp",
+      "logo": "/logos/freecodecamp.svg"
+    },
+    {
+      "title": "Node.js, Express, MongoDB Bootcamp (Jonas Schmedtmann)",
+      "issuer": "Udemy",
+      "logo": "/logos/udemy.svg"
+    },
+    {
+      "title": "Ultimate React Course 2024 (Jonas Schmedtmann)",
+      "issuer": "Udemy",
+      "logo": "/logos/udemy.svg"
+    }
+  ]
 }

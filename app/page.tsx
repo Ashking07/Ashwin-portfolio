@@ -5,6 +5,7 @@ import resume from '@/content/data/resume.json'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowDown, ExternalLink } from 'lucide-react'
 import DemoTiles from '@/components/DemoTiles'
+import Certifications from '@/components/Certifications'
 const AIChat = dynamic(() => import('@/components/AIChat'), { ssr: false })
 
 export default function HomePage() {
@@ -85,6 +86,10 @@ export default function HomePage() {
             </span>
           ))}
         </div>
+      </Section>
+
+      <Section id="certs" headline="Academic Research / Certifications" sub="Selected credentials from Microsoft, Google Cloud, freeCodeCamp, and Udemy.">
+        <Certifications />
       </Section>
 
       <Section id="resume" headline="Resume" sub="Quick highlights — download full PDF for details.">
