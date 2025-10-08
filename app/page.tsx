@@ -7,6 +7,7 @@ import { ArrowRight, ArrowDown, ExternalLink } from 'lucide-react'
 import DemoTiles from '@/components/DemoTiles'
 import Certifications from '@/components/Certifications'
 import SkillsShowcase from '@/components/SkillsShowcase'
+import UrlTagger from '@/components/UrlTagger'
 const AIChat = dynamic(() => import('@/components/AIChat'), { ssr: false })
 
 export default function HomePage() {
@@ -95,6 +96,7 @@ export default function HomePage() {
 
       <Section id="playground" headline="AI Playground" sub="Ask about my projects, skills, or experience.">
         <DemoTiles />
+         <UrlTagger />
         <div id="playground-chat-slot" className="mt-6 max-w-3xl"></div>
       </Section>
 
