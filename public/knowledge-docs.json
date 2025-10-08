@@ -1,0 +1,296 @@
+[
+  {
+    "id": "0",
+    "title": "Summary",
+    "text": "Full‑stack Developer (React/Next.js, Node) • AI/NLP",
+    "source": "resume"
+  },
+  {
+    "id": "1",
+    "title": "Skill: JavaScript/TypeScript",
+    "text": "JavaScript/TypeScript",
+    "source": "skills"
+  },
+  {
+    "id": "2",
+    "title": "Skill: React",
+    "text": "React",
+    "source": "skills"
+  },
+  {
+    "id": "3",
+    "title": "Skill: Next.js",
+    "text": "Next.js",
+    "source": "skills"
+  },
+  {
+    "id": "4",
+    "title": "Skill: Tailwind",
+    "text": "Tailwind",
+    "source": "skills"
+  },
+  {
+    "id": "5",
+    "title": "Skill: Node.js",
+    "text": "Node.js",
+    "source": "skills"
+  },
+  {
+    "id": "6",
+    "title": "Skill: Express",
+    "text": "Express",
+    "source": "skills"
+  },
+  {
+    "id": "7",
+    "title": "Skill: REST",
+    "text": "REST",
+    "source": "skills"
+  },
+  {
+    "id": "8",
+    "title": "Skill: JWT",
+    "text": "JWT",
+    "source": "skills"
+  },
+  {
+    "id": "9",
+    "title": "Skill: MongoDB",
+    "text": "MongoDB",
+    "source": "skills"
+  },
+  {
+    "id": "10",
+    "title": "Skill: MySQL",
+    "text": "MySQL",
+    "source": "skills"
+  },
+  {
+    "id": "11",
+    "title": "Skill: Docker",
+    "text": "Docker",
+    "source": "skills"
+  },
+  {
+    "id": "12",
+    "title": "Skill: Azure",
+    "text": "Azure",
+    "source": "skills"
+  },
+  {
+    "id": "13",
+    "title": "Skill: GCP",
+    "text": "GCP",
+    "source": "skills"
+  },
+  {
+    "id": "14",
+    "title": "Skill: GitHub",
+    "text": "GitHub",
+    "source": "skills"
+  },
+  {
+    "id": "15",
+    "title": "Skill: Postman/Insomnia",
+    "text": "Postman/Insomnia",
+    "source": "skills"
+  },
+  {
+    "id": "16",
+    "title": "Company: Kasnet Technologies",
+    "text": "Cloud Solutions Intern (Azure) — Kasnet Technologies",
+    "source": "experience"
+  },
+  {
+    "id": "17",
+    "title": "Exp: Kasnet Technologies",
+    "text": "Deployed apps via App Services (+30% ops efficiency)",
+    "source": "experience"
+  },
+  {
+    "id": "18",
+    "title": "Exp: Kasnet Technologies",
+    "text": "Normalized Azure SQL (+35% query perf)",
+    "source": "experience"
+  },
+  {
+    "id": "19",
+    "title": "Exp: Kasnet Technologies",
+    "text": "Cost Mgmt (-20% infra spend)",
+    "source": "experience"
+  },
+  {
+    "id": "20",
+    "title": "Exp: Kasnet Technologies",
+    "text": "Azure Monitor (+25% response, +40% engagement)",
+    "source": "experience"
+  },
+  {
+    "id": "21",
+    "title": "Education: CSU Fullerton",
+    "text": "MS Computer Science (2024–Present)",
+    "source": "education"
+  },
+  {
+    "id": "22",
+    "title": "Cert: Microsoft",
+    "text": "Microsoft Certified: Azure AI Fundamentals — Microsoft (certification, certificate, cert)",
+    "source": "certs"
+  },
+  {
+    "id": "23",
+    "title": "Cert: Microsoft",
+    "text": "Microsoft Certified: Azure Fundamentals — Microsoft (certification, certificate, cert)",
+    "source": "certs"
+  },
+  {
+    "id": "24",
+    "title": "Cert: Google Cloud",
+    "text": "Cloud Engineering Track & Data Science/ML — Google Cloud (certification, certificate, cert)",
+    "source": "certs"
+  },
+  {
+    "id": "25",
+    "title": "Cert: freeCodeCamp",
+    "text": "Responsive Web Design (300h) — freeCodeCamp (certification, certificate, cert)",
+    "source": "certs"
+  },
+  {
+    "id": "26",
+    "title": "Cert: Udemy",
+    "text": "Node.js, Express, MongoDB Bootcamp (Jonas Schmedtmann) — Udemy (certification, certificate, cert)",
+    "source": "certs"
+  },
+  {
+    "id": "27",
+    "title": "Cert: Udemy",
+    "text": "Ultimate React Course 2024 (Jonas Schmedtmann) — Udemy (certification, certificate, cert)",
+    "source": "certs"
+  },
+  {
+    "id": "28",
+    "title": "Project: Natours — Scalable Tour Booking Platform",
+    "text": "Node/Express, MongoDB, Stripe, JWT/RBAC. Aggregations & indexes to cut API latency ~40%.",
+    "source": "project:natours"
+  },
+  {
+    "id": "29",
+    "title": "Metrics: Natours — Scalable Tour Booking Platform",
+    "text": "API latency: -40% via indexes/aggregation",
+    "source": "project:natours"
+  },
+  {
+    "id": "30",
+    "title": "Metrics: Natours — Scalable Tour Booking Platform",
+    "text": "Uptime: 99.9%",
+    "source": "project:natours"
+  },
+  {
+    "id": "31",
+    "title": "Metrics: Natours — Scalable Tour Booking Platform",
+    "text": "Payments: 98% success",
+    "source": "project:natours"
+  },
+  {
+    "id": "32",
+    "title": "Tech: Natours — Scalable Tour Booking Platform",
+    "text": "Node.js",
+    "source": "project:natours"
+  },
+  {
+    "id": "33",
+    "title": "Tech: Natours — Scalable Tour Booking Platform",
+    "text": "Express",
+    "source": "project:natours"
+  },
+  {
+    "id": "34",
+    "title": "Tech: Natours — Scalable Tour Booking Platform",
+    "text": "MongoDB",
+    "source": "project:natours"
+  },
+  {
+    "id": "35",
+    "title": "Tech: Natours — Scalable Tour Booking Platform",
+    "text": "Stripe",
+    "source": "project:natours"
+  },
+  {
+    "id": "36",
+    "title": "Tech: Natours — Scalable Tour Booking Platform",
+    "text": "JWT",
+    "source": "project:natours"
+  },
+  {
+    "id": "37",
+    "title": "Tech: Natours — Scalable Tour Booking Platform",
+    "text": "RBAC",
+    "source": "project:natours"
+  },
+  {
+    "id": "38",
+    "title": "Project: Shortify — AI URL Shortener",
+    "text": "10k+/day, Redis cache (-40% redirect latency), categorization via LLM scaffolding.",
+    "source": "project:shortify"
+  },
+  {
+    "id": "39",
+    "title": "Metrics: Shortify — AI URL Shortener",
+    "text": "Traffic: 10k+ requests/day",
+    "source": "project:shortify"
+  },
+  {
+    "id": "40",
+    "title": "Metrics: Shortify — AI URL Shortener",
+    "text": "Latency: -40% via caching",
+    "source": "project:shortify"
+  },
+  {
+    "id": "41",
+    "title": "Tech: Shortify — AI URL Shortener",
+    "text": "Next.js",
+    "source": "project:shortify"
+  },
+  {
+    "id": "42",
+    "title": "Tech: Shortify — AI URL Shortener",
+    "text": "Redis",
+    "source": "project:shortify"
+  },
+  {
+    "id": "43",
+    "title": "Tech: Shortify — AI URL Shortener",
+    "text": "Vercel",
+    "source": "project:shortify"
+  },
+  {
+    "id": "44",
+    "title": "Tech: Shortify — AI URL Shortener",
+    "text": "DeepSeek",
+    "source": "project:shortify"
+  },
+  {
+    "id": "45",
+    "title": "Project: usePopCorn — Movie Ratings App",
+    "text": "React hooks, local storage persistence, -30% initial load, -20% code duplication via custom hooks.",
+    "source": "project:usepopcorn"
+  },
+  {
+    "id": "46",
+    "title": "Tech: usePopCorn — Movie Ratings App",
+    "text": "React",
+    "source": "project:usepopcorn"
+  },
+  {
+    "id": "47",
+    "title": "Tech: usePopCorn — Movie Ratings App",
+    "text": "Vite",
+    "source": "project:usepopcorn"
+  },
+  {
+    "id": "48",
+    "title": "Tech: usePopCorn — Movie Ratings App",
+    "text": "LocalStorage",
+    "source": "project:usepopcorn"
+  }
+]
