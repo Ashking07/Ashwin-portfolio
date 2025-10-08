@@ -51,3 +51,7 @@ pointer-events: none; z-index: 0;
 ::-webkit-scrollbar-thumb{ background:rgba(100,100,100,.3); border-radius:9999px }
 .main-snap{ scrollbar-width:none }
 .main-snap::-webkit-scrollbar{ display:none }
+
+
+/* Skill Galaxy helpers */
+.section-surface { border-radius: 1.5rem; }

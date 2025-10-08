@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, ArrowDown, ExternalLink } from 'lucide-react'
 import DemoTiles from '@/components/DemoTiles'
 import Certifications from '@/components/Certifications'
+import SkillsShowcase from '@/components/SkillsShowcase'
 const AIChat = dynamic(() => import('@/components/AIChat'), { ssr: false })
 
 export default function HomePage() {
@@ -79,13 +80,7 @@ export default function HomePage() {
       </Section>
 
       <Section id="skills" headline="Skills & Tools" sub="A practical stack I use to ship.">
-        <div className="flex flex-wrap gap-2 text-sm">
-          {resume.skills.map((s: string) => (
-            <span key={s} className="border rounded-full px-3 py-1">
-              {s}
-            </span>
-          ))}
-        </div>
+         <SkillsShowcase />
       </Section>
 
       <Section id="certs" headline="Academic Research / Certifications" sub="Selected credentials from Microsoft, Google Cloud, freeCodeCamp, and Udemy.">
