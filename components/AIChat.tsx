@@ -9,6 +9,19 @@ export default function AIChat() {
   const [out, setOut] = useState('')
   const [dock, setDock] = useState(false)
   const [slot, setSlot] = useState<HTMLElement | null>(null)
+  const [bump, setBump] = useState(false)
+
+useEffect(() => {
+  const footer = document.getElementById('site-footer')
+  if (!footer) return
+  const io = new IntersectionObserver(
+    ([entry]) => setBump(entry.isIntersecting),
+    { threshold: 0.01 }
+  )
+  io.observe(footer)
+  return () => io.disconnect()
+}, [])
+
 
   useEffect(() => {
     const section = document.getElementById('playground')
@@ -98,6 +111,7 @@ export default function AIChat() {
           exit="out"
           variants={variants}
           className="fixed z-50 bottom-4 right-4 w-[min(440px,90vw)]"
+          style={{ bottom: `calc(env(safe-area-inset-bottom, 0px) + ${bump ? 320 : 16}px)` }}
         >
           {Box}
         </motion.div>

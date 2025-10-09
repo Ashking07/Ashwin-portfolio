@@ -9,7 +9,8 @@
 { "label": "Uptime", "value": "99.9%" },
 { "label": "Payments", "value": "98% success" }
 ],
-"links": { "demo": "", "repo": "" }
+"links": { "demo": "", "repo": "" },
+ "images": ["/images/projects/natours/1.png", "/images/projects/natours/2.png", "/images/projects/natours/3.png"]
 },
 {
 "slug": "shortify",
@@ -20,7 +21,8 @@
 { "label": "Traffic", "value": "10k+ requests/day" },
 { "label": "Latency", "value": "-40% via caching" }
 ],
-"links": { "demo": "", "repo": "" }
+"links": { "demo": "", "repo": "" },
+"images": ["/images/projects/shortify/1.png", "/images/projects/shortify/2.png", "/images/projects/shortify/3.png"]
 },
 {
 "slug": "usepopcorn",
@@ -28,6 +30,7 @@
 "summary": "React hooks, local storage persistence, -30% initial load, -20% code duplication via custom hooks.",
 "tech": ["React","Vite","LocalStorage"],
 "metrics": [],
-"links": { "demo": "", "repo": "" }
+"links": { "demo": "", "repo": "" },
+"images": ["/images/projects/usepopcorn/1.png", "/images/projects/usepopcorn/2.png", "/images/projects/usepopcorn/3.png"]
 }
 ]

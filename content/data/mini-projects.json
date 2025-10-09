@@ -1,0 +1,8 @@
+[
+  { "title": "CLI Budget Tracker", "tags": ["Node", "SQLite"], "link": "https://github.com/..." },
+  { "title": "Markdown Blog", "tags": ["Next.js", "MDX"], "link": "https://your-site.com" },
+  { "title": "CSV → REST", "tags": ["Express"], "link": "https://github.com/..." },
+  { "title": "Image Optimizer", "tags": ["Sharp"], "link": "https://github.com/..." },
+  { "title": "Theme Switcher", "tags": ["React"], "link": "https://codesandbox.io/..." },
+  { "title": "URL Preview Card", "tags": ["OG tags"], "link": "https://github.com/..." }
+]

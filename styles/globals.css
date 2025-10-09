@@ -3,28 +3,51 @@
 @tailwind utilities;
 
 :root { color-scheme: light dark; }
+html, body { height: 100%; }
 html { scroll-behavior: smooth; }
 
-/* Scroll-snap single-page layout */
-body { min-height: 100vh; }
-.main-snap { height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; }
-.snap-section { scroll-snap-align: start; min-height: 100svh; display: grid; place-items: center; padding: 6rem 1rem; }
+
+/* ---- Single scroll surface (body) ---- */
+body{
+   min-height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;   /* strong snap = page-to-page feel */
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  scroll-padding-top: 64px;        /* adjust to your fixed navbar height */
+}
+
+/* The inner wrapper is no longer a scroller */
+.main-snap{
+  height: auto;
+  overflow: visible;
+}
+
+/* Default sections still snap & fill a viewport */
+.snap-section{
+  scroll-snap-align: start;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 1rem;
+  scroll-snap-stop: always;  
+}
+
+/* Opt-out for tall sections (e.g., Projects, Contact) */
+.snap-section--auto{
+  min-height: auto;
+  scroll-snap-align: none;
+  padding-block: 4rem;
+}
 
 .container { max-width: 1100px; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
 
-/* Subtle gradient background per section */
+/* Card surface */
 .section-surface { @apply rounded-3xl border shadow-sm backdrop-blur bg-white/70 dark:bg-zinc-900/60; }
+.section-surface { border-radius: 1.5rem; }
 
-/* Hero ambient gradient
-.hero-bg {
-position: absolute; inset: -20% -10% auto -10%; height: 60vh; filter: blur(60px);
-background: radial-gradient(60% 60% at 30% 40%, rgba(99,102,241,.35), transparent 60%),
-radial-gradient(50% 50% at 70% 20%, rgba(147,51,234,.30), transparent 60%),
-radial-gradient(40% 40% at 50% 70%, rgba(59,130,246,.25), transparent 60%);
-pointer-events: none; z-index: 0;
-} */
- /* Enhanced full-screen ambient gradient */
-.hero-bg {
+/* ---- Enhanced full-screen ambient gradient ---- */
+.hero-bg{
   position: fixed;
   inset: -30% -20% -30% -20%;
   height: 160vh;
@@ -32,26 +55,31 @@ pointer-events: none; z-index: 0;
   filter: blur(100px);
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(60% 60% at 30% 40%, rgba(99,102,241,0.35), transparent 70%),
-              radial-gradient(50% 50% at 70% 20%, rgba(147,51,234,0.30), transparent 70%),
-              radial-gradient(40% 40% at 50% 70%, rgba(59,130,246,0.25), transparent 70%);
+  background:
+    radial-gradient(60% 60% at 30% 40%, rgba(99,102,241,0.35), transparent 70%),
+    radial-gradient(50% 50% at 70% 20%, rgba(147,51,234,0.30), transparent 70%),
+    radial-gradient(40% 40% at 50% 70%, rgba(59,130,246,0.25), transparent 70%);
   transition: background 1s ease, filter 1s ease;
   animation: hueShift 18s ease-in-out infinite alternate;
 }
 
-@keyframes hueShift {
-  0% { filter: blur(100px) hue-rotate(0deg); }
-  50% { filter: blur(110px) hue-rotate(30deg); }
+@keyframes hueShift{
+  0%   { filter: blur(100px) hue-rotate(0deg); }
+  50%  { filter: blur(110px) hue-rotate(30deg); }
   100% { filter: blur(100px) hue-rotate(-30deg); }
 }
 
+/* ---- Pretty scrollbar (body now scrolls) ---- */
+body::-webkit-scrollbar{ width:8px; }
+body::-webkit-scrollbar-thumb{ background:rgba(100,100,100,.3); border-radius:9999px; }
+body{ scrollbar-width: thin; }
 
-/* Pretty scrollbar */
-::-webkit-scrollbar{ width:8px }
-::-webkit-scrollbar-thumb{ background:rgba(100,100,100,.3); border-radius:9999px }
-.main-snap{ scrollbar-width:none }
-.main-snap::-webkit-scrollbar{ display:none }
+/* Hide scrollbars for modals/rails */
+.no-scrollbar::-webkit-scrollbar{ display:none; }
+.no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
 
-
-/* Skill Galaxy helpers */
-.section-surface { border-radius: 1.5rem; }
+/* Softer focus for inputs */
+input:focus, textarea:focus, a:focus, button:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #6366f1 25%, transparent);
+}
