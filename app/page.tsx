@@ -10,6 +10,7 @@ import SkillsShowcase from '@/components/SkillsShowcase'
 import UrlTagger from '@/components/UrlTagger'
 import ContactCard from '@/components/ContactCard'
 import ProjectsGrid from '@/components/ProjectsGrid'
+import Footer from '@/components/Footer'
 const AIChat = dynamic(() => import('@/components/AIChat'), { ssr: false })
 
 export default function HomePage() {
@@ -44,7 +45,7 @@ export default function HomePage() {
       {/* <Section id="projects" headline="Featured Projects" sub="Problem → solution → metrics.">
         <ProjectsGrid />
       </Section> */}
-      <Section id="projects" headline="Featured Projects" className="snap-section--auto" sub="Problem → solution → metrics.">
+      <Section id="projects" headline="Featured Projects" className="snap-section" sub="Problem → solution → metrics.">
         <div className="relative">
           <ProjectsGrid />
         </div>
@@ -70,9 +71,13 @@ export default function HomePage() {
         <div id="playground-chat-slot" className="mt-6 max-w-3xl"></div>
       </Section>
 
-      <Section id="contact" headline="Contact" className="snap-section--auto" sub="I’m open to roles, freelance, and collaborations.">
+      <Section id="contact" headline="Contact" className="snap-section" sub="I’m open to roles, freelance, and collaborations.">
         <ContactCard />
       </Section>
+
+      <Section id="footer" headline="Thanks for visiting!" className="snap-section pb-40 md:pb-56 lg:pb-64">
+  <Footer />
+</Section>
 
       <AIChat />
     </div>
@@ -89,11 +94,20 @@ function Section({
   return (
     <section id={id} className={`snap-section ${className ?? ''}`}>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        className="container relative z-[1]"
-      >
+      // render immediately (no fade gate)
+  initial={{ y: 8, scale: 0.995, opacity: 1 }}
+  whileInView={{ y: 0, scale: 1, opacity: 1 }}
+
+  // start earlier so it’s ready *as* the snap lands
+  viewport={{ once: false, amount: 0.2, margin: '-20% 0% -40% 0%' }}
+
+  // crisp & fast
+  transition={{ type: 'tween', duration: 0.14, ease: 'easeOut' }}
+
+  // micro-optimization to keep it buttery
+  style={{ willChange: 'transform' }}
+  className="container"
+>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight whitespace-pre-line">{headline}</h2>
         {sub && <p className="mt-4 text-lg opacity-80 max-w-2xl">{sub}</p>}
         <div className="mt-8">{children}</div>

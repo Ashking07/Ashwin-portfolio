@@ -2,43 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light dark; }
+/* Body doesn't scroll; inner does */
 html, body { height: 100%; }
-html { scroll-behavior: smooth; }
+body { overflow: hidden; }
 
-
-/* ---- Single scroll surface (body) ---- */
-body{
-   min-height: 100vh;
-  overflow: auto;
-  scroll-snap-type: y mandatory;   /* strong snap = page-to-page feel */
+/* Full-bleed snap scroller */
+:root { --nav-h: 64px; }                 /* adjust to your header height */
+.main-snap{
+  position: fixed;                        /* <-- key: full-screen layer */
+  inset: 0;                               /* fill viewport */
+  overflow-y: auto;
+  height: auto;
+  scroll-snap-type: y mandatory;          /* strong snap */
+  scroll-snap-stop: always;
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;
-  scroll-padding-top: 64px;        /* adjust to your fixed navbar height */
+  scroll-padding-top: var(--nav-h);       /* offset for fixed/sticky nav */
+  isolation: isolate;                     /* safer z-index stacking */
 }
 
-/* The inner wrapper is no longer a scroller */
-.main-snap{
-  height: auto;
-  overflow: visible;
-}
-
-/* Default sections still snap & fill a viewport */
+/* Sections that should snap page-by-page */
 .snap-section{
+  min-height: 100svh;
   scroll-snap-align: start;
-  min-height: 100dvh;
   display: grid;
   place-items: center;
   padding: 6rem 1rem;
-  scroll-snap-stop: always;  
 }
 
-/* Opt-out for tall sections (e.g., Projects, Contact) */
+/* Sections that are taller / free scroll (e.g., Projects, Contact) */
 .snap-section--auto{
   min-height: auto;
   scroll-snap-align: none;
+  scroll-snap-stop: normal;
   padding-block: 4rem;
 }
+
 
 .container { max-width: 1100px; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
 
@@ -82,4 +81,12 @@ body{ scrollbar-width: thin; }
 input:focus, textarea:focus, a:focus, button:focus{
   outline: none;
   box-shadow: 0 0 0 3px color-mix(in srgb, #6366f1 25%, transparent);
+}
+
+
+/* height of your floating chat box (tweak if you change it) */
+:root { --chat-h: 500px; }
+
+.safe-bottom {
+  padding-bottom: calc(var(--chat-h) + 2.5rem + env(safe-area-inset-bottom));
 }
