@@ -90,3 +90,7 @@ input:focus, textarea:focus, a:focus, button:focus{
 .safe-bottom {
   padding-bottom: calc(var(--chat-h) + 2.5rem + env(safe-area-inset-bottom));
 }
+
+
+/* Optional: slightly larger hero headline tracking */
+.h1-tight { letter-spacing: -0.02em; }

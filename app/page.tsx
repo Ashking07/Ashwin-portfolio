@@ -11,6 +11,7 @@ import UrlTagger from '@/components/UrlTagger'
 import ContactCard from '@/components/ContactCard'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import Footer from '@/components/Footer'
+import HeroStats from '@/components/HeroStats'
 const AIChat = dynamic(() => import('@/components/AIChat'), { ssr: false })
 
 export default function HomePage() {
@@ -20,27 +21,36 @@ export default function HomePage() {
       <div className="hero-bg" />
 
       <Section
-        id="hero"
-        headline={`Hi, I’m Ashwin — Full-stack\nSoftware Engineer`}
-        className="snap-section"
-        sub="I build scalable web apps, wire real metrics, and ship useful AI features."
-      >
-        <div className="mt-6 flex gap-3">
-          <a className="px-4 py-2 rounded-xl border" href="#projects">
-            View Projects
-          </a>
-          <a
-            className="px-4 py-2 rounded-xl border inline-flex items-center gap-2"
-            href="#playground"
-          >
-            AI Playground <ArrowRight size={16} />
-          </a>
-        </div>
-        <div className="mt-10 hidden md:flex items-center gap-2 text-sm opacity-70">
-          <span>Scroll</span>
-          <ArrowDown size={16} />
-        </div>
-      </Section>
+  id="hero"
+  headline={`Hi, I’m Ashwin — Full-stack\nSoftware Engineer`}
+  sub={undefined}
+>
+  {/* About me */}
+  <p className="max-w-2xl text-lg opacity-90">
+    I build pragmatic, AI-augmented web apps end-to-end: clean React/Next.js UIs, reliable Node/Express
+    APIs, and measurable outcomes. Comfortable across databases (Mongo/SQL), cloud (Azure/GCP),
+    and shipping AI features with DeepSeek/OpenAI.
+  </p>
+
+  {/* CTAs */}
+  <div className="mt-6 flex flex-wrap gap-3">
+    <a className="px-4 py-2 rounded-xl border hover:shadow-sm transition" href="#projects">
+      View Projects
+    </a>
+    <a className="px-4 py-2 rounded-xl border inline-flex items-center gap-2 hover:shadow-sm transition" href="#playground">
+      AI Playground <ArrowRight size={16} />
+    </a>
+  </div>
+
+  {/* Stats rail */}
+  <HeroStats />
+
+  {/* Subtle “scroll” affordance */}
+  <div className="mt-10 hidden md:flex items-center gap-2 text-sm opacity-70">
+    <span>Scroll</span>
+    <ArrowDown size={16} />
+  </div>
+</Section>
 
       {/* <Section id="projects" headline="Featured Projects" sub="Problem → solution → metrics.">
         <ProjectsGrid />

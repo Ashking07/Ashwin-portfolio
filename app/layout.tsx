@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import Navbar from '@/components/NavBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,8 @@ return (
 <html lang="en" suppressHydrationWarning>
 <body className={`${inter.className} bg-white text-gray-900 dark:bg-zinc-950 dark:text-zinc-100`}>
 <ThemeProvider>
-<Header />
+{/* <Header /> */}
+ <Navbar />
 <main className="container mx-auto px-4 py-10">{children}</main>
 {/* <Footer /> */}
 </ThemeProvider>

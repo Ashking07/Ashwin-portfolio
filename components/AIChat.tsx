@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const HIDE_ON_IDS = [
+  'hero',
   'projects',          // Featured Projects
   'certs',    // Research & Certifications (rename if your id differs)
   'footer',            // if you used <Section id="footer" ...>
