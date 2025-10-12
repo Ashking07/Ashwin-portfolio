@@ -103,8 +103,8 @@ function Section({
 }) {
   return (
     <section id={id} className={`snap-section ${className ?? ''}`}>
-      <motion.div
-      // render immediately (no fade gate)
+<motion.section
+  // render immediately (no fade gate)
   initial={{ y: 8, scale: 0.995, opacity: 1 }}
   whileInView={{ y: 0, scale: 1, opacity: 1 }}
 
@@ -116,12 +116,12 @@ function Section({
 
   // micro-optimization to keep it buttery
   style={{ willChange: 'transform' }}
-  className="container"
+  {...{ className: "container" }}
 >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight whitespace-pre-line">{headline}</h2>
-        {sub && <p className="mt-4 text-lg opacity-80 max-w-2xl">{sub}</p>}
-        <div className="mt-8">{children}</div>
-      </motion.div>
+  <h2 className="text-4xl md:text-5xl font-bold tracking-tight whitespace-pre-line">{headline}</h2>
+  {sub && <p className="mt-4 text-lg opacity-80 max-w-2xl">{sub}</p>}
+  <div className="mt-8">{children}</div>
+</motion.section>
     </section>
   )
 }
