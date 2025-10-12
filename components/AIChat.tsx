@@ -132,7 +132,14 @@ export default function AIChat() {
     createPortal(
       <AnimatePresence mode="wait">
         {dock && (
-          <motion.div key="docked" initial="out" animate="in" exit="out" variants={variants} className="mx-auto w-full max-w-2xl">
+          <motion.div
+            key="docked"
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={variants}
+            {...{ className: "mx-auto w-full max-w-2xl" }}
+          >
             {Box}
           </motion.div>
         )}
