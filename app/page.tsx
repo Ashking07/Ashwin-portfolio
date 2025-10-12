@@ -34,6 +34,16 @@ export default function HomePage() {
 
   {/* CTAs */}
   <div className="mt-6 flex flex-wrap gap-3">
+    <a
+  href="/ashwin-resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-4 py-2 rounded-xl border border-indigo-500/50 text-indigo-700 dark:text-indigo-300
+             hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:shadow-sm transition"
+>
+  Download Resume
+</a>
+
     <a className="px-4 py-2 rounded-xl border hover:shadow-sm transition" href="#projects">
       View Projects
     </a>
@@ -52,28 +62,21 @@ export default function HomePage() {
   </div>
 </Section>
 
-      {/* <Section id="projects" headline="Featured Projects" sub="Problem → solution → metrics.">
-        <ProjectsGrid />
-      </Section> */}
+     
       <Section id="projects" headline="Featured Projects" className="snap-section" sub="Problem → solution → metrics.">
         <div className="relative">
           <ProjectsGrid />
         </div>
       </Section>
 
-      <Section id="skills" headline="Skills & Tools" className="snap-section" sub="A practical stack I use to ship.">
-         <SkillsShowcase />
-      </Section>
-
       <Section id="certs" headline="Academic Research / Certifications" className="snap-section" sub="Selected credentials from Microsoft, Google Cloud, freeCodeCamp, and Udemy.">
         <Certifications />
       </Section>
 
-      <Section id="resume" headline="Resume" className="snap-section" sub="Quick highlights — download full PDF for details.">
-        <a href="/ashwin-resume.pdf" target="_blank" className="inline-block px-4 py-2 rounded-xl border">
-          Download PDF
-        </a>
+      <Section id="skills" headline="Skills & Tools" className="snap-section" sub="A practical stack I use to ship.">
+         <SkillsShowcase />
       </Section>
+
 
       <Section id="playground" headline="AI Playground" className="snap-section" sub="Ask about my projects, skills, or experience.">
         <DemoTiles />
