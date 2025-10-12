@@ -54,22 +54,33 @@ export default function ProjectModal({ open, onClose, project }: P) {
       {open && project && (
         <motion.div
           ref={overlayRef}
-          className="fixed inset-0 z-[60] bg-black/30 dark:bg-black/40 backdrop-blur-sm
-                     flex items-center justify-center p-4"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 60,
+            background: 'rgba(0,0,0,0.3)',
+            backdropFilter: 'blur(4px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1rem'
+          }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
         >
           {/* gradient ring wrapper */}
           <motion.div
-            role="dialog" aria-modal="true"
             // ↓ this element is the "panel" for outside-click testing
             ref={panelRef}
-            className="w-[min(980px,94vw)] max-h-[90dvh] rounded-3xl p-[2px]
-                       bg-gradient-to-r from-indigo-500/40 via-fuchsia-500/30 to-emerald-500/40"
             initial={{ opacity: 0, y: 20, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.98 }}
+            {...{ className: "w-[min(980px,94vw)] max-h-[90dvh] rounded-3xl p-[2px] bg-gradient-to-r from-indigo-500/40 via-fuchsia-500/30 to-emerald-500/40" }}
           >
-            <div className="rounded-3xl border bg-white/80 dark:bg-zinc-900/70 backdrop-blur flex flex-col overflow-hidden">
+            <div
+              role="dialog"
+              aria-modal="true"
+              className="rounded-3xl border bg-white/80 dark:bg-zinc-900/70 backdrop-blur flex flex-col overflow-hidden"
+            >
               {/* Header */}
               <div className="sticky top-0 z-10 border-b bg-white/70 dark:bg-zinc-900/60 backdrop-blur px-5 py-4 flex items-start gap-3">
                 <div className="font-semibold text-lg leading-tight">{project.name}</div>
