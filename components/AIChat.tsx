@@ -4,8 +4,9 @@ import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 
-const HIDE_ON_IDS = ['hero', 'projects', 'certs']
-const HARD_HIDE_IDS = ['footer', 'site-footer']
+/** ids must match your Section ids */
+const HIDE_ON_IDS = ['hero', 'projects', 'certs']         // normal hide
+const HARD_HIDE_IDS = ['footer', 'site-footer']           // hide IMMEDIATELY
 
 export default function AIChat() {
   const [q, setQ] = useState('')
@@ -15,29 +16,24 @@ export default function AIChat() {
   const [bump, setBump] = useState(false)
   const [hidden, setHidden] = useState(false)
 
-  // debounce/cancel to avoid flicker
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const cancelDebounce = () => { if (hideTimer.current) clearTimeout(hideTimer.current) }
 
   const getRoot = () => (document.querySelector('.main-snap') as Element | null) ?? null
 
-  // Footer bump — only when visible AND we're not hidden
+  // lift above footer when footer is visible
   useEffect(() => {
     const footer = document.getElementById('site-footer') || document.getElementById('footer')
     if (!footer) return
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        // don't bump if we're (going to be) hidden or docked in playground
-        if (hidden || dock) { setBump(false); return }
-        setBump(entry.isIntersecting)
-      },
-      { threshold: 0.01, root: getRoot() }
-    )
+    const io = new IntersectionObserver(([entry]) => setBump(entry.isIntersecting), {
+      threshold: 0.01,
+      root: getRoot(),
+    })
     io.observe(footer)
     return () => io.disconnect()
-  }, [hidden, dock])
+  }, [])
 
-  // Find slot + dock when Playground visible
+  // find slot + dock when Playground is on screen
   useEffect(() => {
     setSlot(document.getElementById('playground-chat-slot') as HTMLElement | null)
     const section = document.getElementById('playground')
@@ -50,7 +46,10 @@ export default function AIChat() {
     return () => io.disconnect()
   }, [])
 
-  // Most-visible section → decide hide/show
+  // most-visible section logic:
+  // - if footer/site-footer is most visible -> hide IMMEDIATELY (no debounce)
+  // - if hero/projects/certs is most visible -> hide (very small debounce to avoid flicker)
+  // - else (e.g., contact/playground) -> show
   const steps = (n = 24) => Array.from({ length: n + 1 }, (_, i) => i / n)
   useEffect(() => {
     const root = (document.querySelector('.main-snap') as Element | null) ?? undefined
@@ -68,22 +67,21 @@ export default function AIChat() {
 
         const currentId = (bestEl as HTMLElement | null)?.id ?? ''
 
-        // If footer dominates: hide immediately and also clear any bump
+        // HARD hide for footer (instant & smooth via exit animation)
         if (HARD_HIDE_IDS.includes(currentId)) {
           cancelDebounce()
           setHidden(true)
-          setBump(false)                 // <- prevent the "jump then vanish"
           return
         }
 
-        // Normal hide on these sections (tiny debounce to avoid flicker)
+        // normal hide for hero/projects/certs (tiny debounce)
         if (HIDE_ON_IDS.includes(currentId)) {
           cancelDebounce()
-          hideTimer.current = setTimeout(() => setHidden(true), 60)
+          hideTimer.current = setTimeout(() => setHidden(true), 60) // quick but stable
           return
         }
 
-        // Otherwise (contact / playground etc.) show, and allow bumping again
+        // otherwise show (contact / playground / etc.) immediately
         cancelDebounce()
         setHidden(false)
       },
@@ -106,7 +104,7 @@ export default function AIChat() {
     }
   }
 
-  // If hidden (and not docked in playground), don't render; AnimatePresence will handle fade-out
+  // do not render when hidden (unless docked in playground)
   if (hidden && !dock) return null
 
   const Box = (
@@ -151,11 +149,8 @@ export default function AIChat() {
           animate="in"
           exit="out"
           variants={variants}
-          className="fixed z-50 right-4 w-[min(440px,90vw)] will-change-transform will-change-opacity"
-          style={{
-            // do NOT bump if we're hidden (or about to be hidden)
-            bottom: `calc(env(safe-area-inset-bottom, 0px) + ${bump && !hidden ? 320 : 16}px)`,
-          }}
+          style={{ bottom: `calc(env(safe-area-inset-bottom, 0px) + ${bump ? 320 : 16}px)` }}
+          {...{ className: "fixed z-50 right-4 w-[min(440px,90vw)]" }}
         >
           {Box}
         </motion.div>
