@@ -1,54 +1,3 @@
-// 'use client'
-
-// import { motion } from 'framer-motion'
-// import resume from '@/content/data/resume.json'
-
-// export default function Certifications() {
-//   const certs = (resume as any).certifications || []
-
-//   // Unique issuers for the logo strip
-//   const issuers = Array.from(new Map(certs.map((c: any) => [c.issuer, c.logo])).entries())
-
-//   return (
-//     <div className="space-y-6">
-//       {/* Logo strip */}
-//       <div className="flex flex-wrap items-center gap-6 opacity-80">
-//         {issuers.map(([issuer, logo]: any, i: number) => (
-//           <motion.img
-//             key={issuer}
-//             src={logo}
-//             alt={issuer}
-//             className="h-8 w-auto grayscale hover:grayscale-0 transition"
-//             initial={{ opacity: 0, y: 6 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true, amount: 0.5 }}
-//           />
-//         ))}
-//       </div>
-
-//       {/* Cert cards */}
-//       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-//         {certs.map((c: any, i: number) => (
-//           <motion.article
-//             key={i}
-//             className="rounded-2xl border p-4 bg-white/60 dark:bg-zinc-900/50"
-//             initial={{ opacity: 0, y: 8 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true, amount: 0.4 }}
-//           >
-//             <div className="flex items-center gap-2">
-//               <img src={c.logo} alt={c.issuer} className="h-5 w-auto" />
-//               <div className="text-xs opacity-70">{c.issuer}</div>
-//             </div>
-//             <div className="mt-2 font-medium">{c.title}</div>
-//           </motion.article>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
-
-
 'use client'
 import { motion } from 'framer-motion'
 import resume from '@/content/data/resume.json'
@@ -73,16 +22,20 @@ export default function Certifications() {
     <div className="space-y-6">
      <div className="flex flex-wrap items-center gap-8">
      {issuers.map(([issuer, logos]: any) => (
-     <motion.img
-        key={issuer}
-        src={logos.short}
-        alt={issuer}
-        className="h-8 w-auto transition-transform hover:scale-105"
-        initial={{ opacity: 0, y: 6 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-     />
-    ))}
+       <motion.div
+         key={issuer}
+         initial={{ opacity: 0, y: 6 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         viewport={{ once: true, amount: 0.5 }}
+         className="h-8 w-auto transition-transform hover:scale-105 flex items-center"
+       >
+         <img
+           src={logos.short}
+           alt={issuer}
+           className="h-8 w-auto"
+         />
+       </motion.div>
+     ))}
      </div>
 
 

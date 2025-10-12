@@ -1,11 +1,11 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, JSX } from 'react'
 import {
   SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss,
   SiNodedotjs, SiExpress, SiJsonwebtokens, SiMongodb, SiMysql,
-  SiDocker, SiMicrosoftazure, SiGooglecloud, SiGithub, SiPostman
+  SiDocker,SiGooglecloud, SiGithub, SiPostman
 } from 'react-icons/si'
 import { FiCloud } from 'react-icons/fi' // fallback
 
