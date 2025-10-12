@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import AvatarThumb from './AvatarThumb'
+import ThemeToggle from './ThemeToggle'
 
 const links = [
   { href: '#hero', label: 'Home' },
@@ -53,6 +54,7 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          <ThemeToggle />
         </div>
       </nav>
     </header>
