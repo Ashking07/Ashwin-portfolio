@@ -8,8 +8,8 @@ import AvatarThumb from './AvatarThumb'
 const links = [
   { href: '#hero', label: 'Home' },
   { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
   { href: '#certs', label: 'Certs' },
+  { href: '#skills', label: 'Skills' },
   { href: '#playground', label: 'Playground' },
   { href: '#contact', label: 'Contact' },
 ]
