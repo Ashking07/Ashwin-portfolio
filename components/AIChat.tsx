@@ -108,19 +108,41 @@ export default function AIChat() {
   if (hidden && !dock) return null
 
   const Box = (
-    <div className="rounded-2xl border p-4 shadow-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur">
-      <div className="text-sm opacity-70 mb-2">Ask Ashwin</div>
-      <textarea
-        value={q}
-        onChange={e => setQ(e.target.value)}
-        className="w-full border rounded p-2 mb-2 bg-transparent"
-        rows={3}
-        placeholder="Ask about my projects, skills, or experience…"
-      />
-      <button onClick={ask} className="px-3 py-2 rounded-lg border">Send</button>
-      <pre className="mt-3 whitespace-pre-wrap text-sm max-h-40 overflow-auto">{out}</pre>
+  <div className="rounded-2xl border p-4 shadow-xl bg-white/90 dark:bg-zinc-900/90 backdrop-blur">
+    <div className="text-sm opacity-70 mb-2">Ask Ashwin</div>
+
+    <textarea
+      value={q}
+      onChange={(e) => setQ(e.target.value)}
+      className="w-full border rounded p-2 mb-2 bg-transparent"
+      rows={3}
+      placeholder="Ask about my projects, skills, or experience…"
+    />
+
+    <div className="flex gap-2">
+      <button
+        onClick={ask}
+        className="px-3 py-2 rounded-lg border hover:bg-black/5 dark:hover:bg-white/10 transition"
+      >
+        Send
+      </button>
+
+      <button
+        onClick={() => { setQ(''); setOut('') }}
+        className="px-3 py-2 rounded-lg border hover:bg-black/5 dark:hover:bg-white/10 transition"
+      >
+        Clear
+      </button>
     </div>
-  )
+
+    {out && (
+      <pre className="mt-3 whitespace-pre-wrap text-sm max-h-40 overflow-auto">
+        {out}
+      </pre>
+    )}
+  </div>
+)
+
 
   const variants = {
     in:  { opacity: 1, scale: 1, y: 0,  filter: 'blur(0px)', transition: { type: "spring" as const, stiffness: 260, damping: 26 } },

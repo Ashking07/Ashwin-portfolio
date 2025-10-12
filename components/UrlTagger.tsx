@@ -42,6 +42,12 @@ export default function UrlTagger() {
           className="border rounded-xl px-4 py-2">
           {loading ? 'Analyzing…' : 'Analyze'}
         </button>
+        <button
+          onClick={() => { setUrl(''); setRes(null); setErr(null) }}
+          className="px-4 py-2 rounded-xl border hover:bg-black/5 dark:hover:bg-white/10 transition"
+        >
+    Clear
+  </button>
       </div>
 
       {err && <div className="mt-3 text-sm text-red-600">{err}</div>}
